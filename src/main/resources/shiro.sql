@@ -22,15 +22,19 @@ DROP TABLE IF EXISTS `role_permissions`;
 CREATE TABLE `role_permissions` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `permission` varchar(50) DEFAULT NULL,
-  `role` int(10) DEFAULT NULL,
+  `role_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+
 
 -- ----------------------------
 -- Records of role_permissions
 -- ----------------------------
-INSERT INTO `role_permissions` VALUES ('1', 'user:add', '1');
-INSERT INTO `role_permissions` VALUES ('2', 'user:update', '1');
+INSERT INTO `role_permissions` (`id`, `permission`, `role_name`) VALUES ('1', 'user:add', 'admin');
+INSERT INTO `role_permissions` (`id`, `permission`, `role_name`) VALUES ('2', 'user:update', 'admin');
+INSERT INTO `role_permissions` (`id`, `permission`, `role_name`) VALUES ('3', 'user:delete', 'admin');
+
 
 -- ----------------------------
 -- Table structure for users
